@@ -34,7 +34,7 @@ import android.util.Log;
 
 public class HTTPActions {
 	
-	public String doGetPetition (String url)
+	public static String doGetPetition (String url)
 	{
 
 		try

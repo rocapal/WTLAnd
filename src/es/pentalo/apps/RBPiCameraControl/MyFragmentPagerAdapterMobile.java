@@ -22,28 +22,37 @@
 package es.pentalo.apps.RBPiCameraControl;
 
 
-import es.pentalo.apps.RBPiCameraControl.Preferences.RBPreferenceFragment;
-import es.pentalo.apps.RBPiCameraControl.Preferences.RBPreferenceFragment.RBPFeatures;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.util.Log;
+import es.pentalo.apps.RBPiCameraControl.Preferences.RBPreferenceFragment;
+import es.pentalo.apps.RBPiCameraControl.Preferences.RBPreferenceFragment.RBPFeatures;
+import es.rocapal.app.wtl.WTLMainFragment;
 
 public class MyFragmentPagerAdapterMobile extends FragmentPagerAdapter {
 
    private String[] pageTitle = {
-           "ImageConfig", "Image", "VideoConfig", "Streaming"
+           "WTL","ImageConfig", "Image", "VideoConfig", "Streaming"
    };
 
    public MyFragmentPagerAdapterMobile(FragmentManager fragmentManager) {
        super(fragmentManager);
+       
    } 
 
    @Override
    public Fragment getItem(int position) {
 	   
+	   
 	   Log.d("My", String.valueOf(position));
+	   
 	   if (position == 0)
+	   {
+		   return new WTLMainFragment();
+	   }
+	   
+	   if (position == 1)
 	   {
 		   RBPreferenceFragment ipFragment = new RBPreferenceFragment();		
 		   ipFragment.setFeature(RBPFeatures.PHOTO);
@@ -51,11 +60,11 @@ public class MyFragmentPagerAdapterMobile extends FragmentPagerAdapter {
 		   return ipFragment;
 					   
 	   }
-	   else if (position ==1)
+	   else if (position ==2)
 	   {
 		   return new PhotoFragment();		   		   
 	   }
-	   else if (position == 2)
+	   else if (position == 3)
 	   { 
 		   RBPreferenceFragment videoFragment = new RBPreferenceFragment();	
 		   videoFragment.setFeature(RBPFeatures.VIDEO);
@@ -63,7 +72,7 @@ public class MyFragmentPagerAdapterMobile extends FragmentPagerAdapter {
 		   return videoFragment;
 	   }
 	   
-	   else if (position == 3)
+	   else if (position == 4)
 	   {		   
 		   return new StreamingFragment();
 	   }

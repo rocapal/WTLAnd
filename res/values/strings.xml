@@ -28,4 +28,12 @@
     <string name="toast_error_streaming">An error ocurred with the video streaming</string>
     
     <string name="streaming_explication">RaspBerryPI camera module gets the video image in H264 format. This Android app use VLC Android app to show the video streaming, so let\'s ready to open VLC applications automatically!</string>
+    
+    <string name="tv_wtl_runstop">Status: Unknow</string>
+    
+    <string name="pd_wtl_title">WTL connect</string>
+    <string name="pd_wtl_msg_status">Get status of WTL</string>
+    <string name="pd_wtl_msg_start">Starting WTL ...</string>
+    <string name="pd_wtl_msg_stop">Stopping WTL ...</string>
+    <string name="toast_wtl_error">Some error ocurred with the connection</string>
 </resources>

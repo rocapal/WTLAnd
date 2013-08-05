@@ -21,6 +21,7 @@
 
 package es.pentalo.apps.RBPiCameraControl;
 
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -141,14 +142,16 @@ public class MainActivity extends Activity implements IDownloadTextFileAsyncTask
         	MyFragmentPagerAdapterMobile fragmentPagerAdapter = new MyFragmentPagerAdapterMobile(getFragmentManager());
             
             viewPager.setAdapter(fragmentPagerAdapter);
+            viewPager.setOffscreenPageLimit(5);
             pagerTabStrip.setDrawFullUnderline(true);
             pagerTabStrip.setTabIndicatorColor(Color.DKGRAY);           
         }
         else
         {        	                        
             MyFragmentPagerAdapter fragmentPagerAdapter = new MyFragmentPagerAdapter(getFragmentManager());
-     
+            
             viewPager.setAdapter(fragmentPagerAdapter);
+            viewPager.setOffscreenPageLimit(5);
             pagerTabStrip.setDrawFullUnderline(true);
             pagerTabStrip.setTabIndicatorColor(Color.DKGRAY);
         }
